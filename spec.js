@@ -151,6 +151,13 @@ describe('Open the page', () => {
 	  cy.get('#root > div > div > div > div > div').should('have.text','Node 1');
   
 })
-
+ // Clear Butonn disable
+  it('Clear Button - Disable after open dropdowntree', () => {
+	  cy.wait(1000);
+	  cy.title().should('include', 'Storybook');
+	  cy.get('#root > div > div > div > div > div').click();
+	  cy.get('#root > div > div > div.DropdownTree__tree > div > ul > li:nth-child(2) > div.Tree__buttons > button.Button.Button--link.Tree__clear').should('be.disabled');
+	  
+})
 })
 
